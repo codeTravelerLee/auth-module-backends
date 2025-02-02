@@ -1,0 +1,10 @@
+POST https://congenial-potato-x7vpgq57px63v45r-3000.app.github.dev/auth/register
+content-type: application/json
+
+{
+  "email": "test@gmail.com",
+  "password": "1234",
+  "username": "andy"
+}
+
+# git remote set-url origin https://codeTravelerLee@github.com/codeTravelerLee/auth-module-backends.git
