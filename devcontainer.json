@@ -1,0 +1,13 @@
+// {
+//   "customizations": {
+//     "codespaces": {
+//       "repositories": {
+//         "https://github.com/codeTravelerLee/auth-module-nestJS.git": {
+//           "permissions": {
+//             "issues": "write-all"
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
