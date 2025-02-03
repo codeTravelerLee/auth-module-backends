@@ -33,9 +33,25 @@ export class AuthService {
       //DB저장이 성공적으로 수행되면 password를 포함한 모든 user정보가 반환됨
       //보안을 위해 반환된 user의 password를 지워줌
       user.password = undefined;
-
     } catch (error) {
       throw new HttpException('Internal Server Error', 500);
+    }
+  }
+
+  //유저 정보 검증
+  async validateUser(email: string, password: string) {
+    const user = await this.userService.getUser(email);
+
+    if (!user) {
+      return null;
+    }
+
+    const { password: hashedPassword, ...userInfo } = user;
+
+    if (bcrypt.compareSync(password, hashedPassword)) {
+      return userInfo;
+    } else {
+      return null;
     }
   }
 }

@@ -1,4 +1,5 @@
 ./devcontainer.json
+auth.sqlite
 
 # compiled output
 /dist
