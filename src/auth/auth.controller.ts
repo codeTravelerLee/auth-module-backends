@@ -31,6 +31,7 @@ export class AuthController {
       });
     }
 
+    console.log(req.user);
     return res.send(`${req.user}님, 안녕하세요!`);
   }
 }
