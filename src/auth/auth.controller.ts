@@ -8,7 +8,7 @@ import {
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { CreateUserDto } from 'src/user/user.dto';
-import { LoginGuard } from './auth.guard';
+import { LocalAuthGuard, LoginGuard } from './auth.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -21,7 +21,7 @@ export class AuthController {
   }
 
   //로그인 요청 핸들러 > 유저 검증 수행
-  @UseGuards(LoginGuard)
+  @UseGuards(LocalAuthGuard)
   @Post('login')
   async login(@Request() req, @Response() res) {
     if (!req.cookies['login'] && req.user) {
